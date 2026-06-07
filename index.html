@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Origin Forge Pty Ltd — Stories That Bridge Worlds</title>
+  <meta name="description" content="Origin Forge is an Adelaide-based media production company bridging Australian and Chinese communities through storytelling and conversation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ===========================
+       RESET & BASE
+    =========================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --terracotta: #C4622D;
+      --terracotta-light: #d97548;
+      --gold: #D4A847;
+      --teal: #2A9D8F;
+      --teal-dark: #217a6e;
+      --dark: #111214;
+      --dark-mid: #1a1c20;
+      --dark-card: #22252b;
+      --text-primary: #f0ece4;
+      --text-secondary: #b0a99a;
+      --text-dark: #1a1c20;
+      --white: #ffffff;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--dark);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ===========================
+       NAV
+    =========================== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(17, 18, 20, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s ease;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-logo #logo svg {
+      height: 36px;
+      width: auto;
+    }
+
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .site-logo svg {
+      height: 36px;
+      width: auto;
+      flex-shrink: 0;
+    }
+
+    .site-logo-wordmark {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+
+    .footer-logo svg {
+      height: 44px;
+      width: auto;
+    }
+
+    .footer-logo .site-logo-wordmark {
+      font-size: 1.05rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: color 0.2s;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-cta {
+      background: var(--terracotta);
+      color: var(--white) !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 6px;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--terracotta-light) !important;
+      color: var(--white) !important;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* ===========================
+       HERO
+    =========================== */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+      background: var(--dark);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    /* Radial glow blobs */
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      top: -10%;
+      right: -5%;
+      width: 60vw;
+      height: 60vw;
+      max-width: 700px;
+      max-height: 700px;
+      background: radial-gradient(circle at center, rgba(196, 98, 45, 0.18) 0%, transparent 65%);
+      border-radius: 50%;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      bottom: -5%;
+      left: -10%;
+      width: 55vw;
+      height: 55vw;
+      max-width: 600px;
+      max-height: 600px;
+      background: radial-gradient(circle at center, rgba(42, 157, 143, 0.14) 0%, transparent 65%);
+      border-radius: 50%;
+    }
+
+    .hero-accent-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--terracotta), var(--gold), var(--teal));
+    }
+
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .hero-title .highlight {
+      background: linear-gradient(135deg, var(--terracotta), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-tagline {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+      line-height: 1.8;
+      position: relative;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .btn-primary {
+      background: var(--terracotta);
+      color: var(--white);
+      padding: 0.875rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: all 0.2s ease;
+      border: 2px solid var(--terracotta);
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: var(--terracotta-light);
+      border-color: var(--terracotta-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(196, 98, 45, 0.35);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-primary);
+      padding: 0.875rem 2rem;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: all 0.2s ease;
+      border: 2px solid var(--border);
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: float 2.5s ease-in-out infinite;
+    }
+
+    .scroll-arrow {
+      width: 20px;
+      height: 20px;
+      border-right: 2px solid var(--text-secondary);
+      border-bottom: 2px solid var(--text-secondary);
+      transform: rotate(45deg);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ===========================
+       SECTIONS SHARED
+    =========================== */
+    section {
+      padding: 6rem 2rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-title .teal {
+      color: var(--teal);
+    }
+
+    .section-title .gold {
+      color: var(--gold);
+    }
+
+    .section-body {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.85;
+      max-width: 680px;
+    }
+
+    /* ===========================
+       ABOUT
+    =========================== */
+    #about {
+      background: var(--dark-mid);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-content .section-body {
+      margin-bottom: 1.25rem;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--terracotta), var(--gold));
+    }
+
+    .about-stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .about-stat {
+      text-align: center;
+    }
+
+    .about-stat .number {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .about-stat .label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    .about-divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--terracotta), var(--gold));
+      border-radius: 2px;
+      margin: 1.5rem 0;
+    }
+
+    .about-location {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--teal);
+      font-weight: 500;
+    }
+
+    .about-location svg {
+      flex-shrink: 0;
+    }
+
+    /* ===========================
+       T² CHANNEL
+    =========================== */
+    #t2-channel {
+      background: var(--dark);
+    }
+
+    .channel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .channel-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(42, 157, 143, 0.1);
+      border: 1px solid rgba(42, 157, 143, 0.3);
+      border-radius: 100px;
+      padding: 0.375rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--teal);
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    .channel-badge .dot {
+      width: 7px;
+      height: 7px;
+      background: var(--teal);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .channel-subtitle {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      max-width: 360px;
+    }
+
+    .channel-link {
+      flex-shrink: 0;
+      color: var(--teal);
+      font-size: 0.875rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: gap 0.2s;
+    }
+
+    .channel-link:hover {
+      gap: 0.65rem;
+    }
+
+    .episode-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .episode-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+    }
+
+    .episode-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--teal);
+      border-radius: 3px 0 0 3px;
+    }
+
+    .episode-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    }
+
+    .episode-thumbnail {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #1e2530, #252b35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .episode-thumbnail::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(42,157,143,0.08), transparent);
+    }
+
+    .play-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.1);
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      transition: all 0.2s ease;
+    }
+
+    .episode-card:hover .play-icon {
+      background: rgba(42,157,143,0.3);
+      border-color: var(--teal);
+    }
+
+    .play-icon svg {
+      margin-left: 3px;
+    }
+
+    .ep-number {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      background: var(--teal);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+      z-index: 1;
+    }
+
+    .episode-body {
+      padding: 1.5rem;
+    }
+
+    .ep-guest {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .ep-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+
+    .ep-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .ep-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    .ep-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .filming-note {
+      margin-top: 3rem;
+      background: rgba(42, 157, 143, 0.06);
+      border: 1px solid rgba(42, 157, 143, 0.2);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .filming-note-icon {
+      font-size: 1.75rem;
+      flex-shrink: 0;
+    }
+
+    .filming-note p {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .filming-note strong {
+      color: var(--teal);
+    }
+
+    /* ===========================
+       BILINGUAL IDENTITY PANEL
+    =========================== */
+    .bilingual-panel {
+      margin-top: 2.5rem;
+      background: var(--dark-mid);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: auto 1px 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bilingual-panel::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--terracotta), var(--teal));
+    }
+
+    .bilingual-left {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .tutu-char-inline {
+      font-size: 3.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--gold), var(--terracotta));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+
+    .tutu-name-zh {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.35rem;
+    }
+
+    .tutu-name-en {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.06em;
+    }
+
+    .bilingual-divider {
+      width: 1px;
+      height: 80px;
+      background: var(--border);
+      flex-shrink: 0;
+    }
+
+    .bilingual-explanation {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .bilingual-explanation strong {
+      color: var(--text-primary);
+    }
+
+    .tutu-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, var(--gold), var(--terracotta));
+      color: white;
+      padding: 0.625rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.2s ease;
+      letter-spacing: 0.02em;
+    }
+
+    .tutu-link-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(212, 168, 71, 0.3);
+    }
+
+    /* ===========================
+       COLLABORATE
+    =========================== */
+    #collaborate {
+      background: var(--dark);
+    }
+
+    .collab-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: flex-start;
+    }
+
+    .collab-pitch {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.85;
+      margin-bottom: 2rem;
+    }
+
+    .collab-perks {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .collab-perks li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .perk-icon {
+      width: 22px;
+      height: 22px;
+      background: rgba(42, 157, 143, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .perk-icon svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-form::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--terracotta), var(--gold), var(--teal));
+    }
+
+    .form-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1.75rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      color: var(--text-primary);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      -webkit-appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--teal);
+      background: rgba(42, 157, 143, 0.05);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255,255,255,0.2);
+    }
+
+    .form-group select option {
+      background: var(--dark-card);
+      color: var(--text-primary);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      width: 100%;
+      background: var(--terracotta);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 0.875rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      letter-spacing: 0.02em;
+    }
+
+    .form-submit:hover {
+      background: var(--terracotta-light);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(196, 98, 45, 0.35);
+    }
+
+    .form-note {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      text-align: center;
+      margin-top: 1rem;
+      opacity: 0.7;
+    }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    footer {
+      background: #0d0e10;
+      border-top: 1px solid var(--border);
+      padding: 4rem 2rem 2rem;
+    }
+
+    .footer-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand .logo-area {
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 280px;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-row {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .social-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      color: var(--text-secondary);
+    }
+
+    .social-icon:hover {
+      border-color: var(--terracotta);
+      color: var(--terracotta);
+      background: rgba(196, 98, 45, 0.08);
+    }
+
+    .footer-col-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-primary);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-legal {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.3);
+      line-height: 1.7;
+    }
+
+    .footer-legal strong {
+      color: rgba(255,255,255,0.45);
+    }
+
+    .footer-accent-bar {
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--terracotta), var(--gold), var(--teal));
+      margin-top: 2rem;
+      opacity: 0.5;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===========================
+       TOAST NOTIFICATION
+    =========================== */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--dark-card);
+      border: 1px solid var(--teal);
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--text-primary);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+      z-index: 1000;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.35s ease;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .toast-icon {
+      color: var(--teal);
+      font-size: 1.1rem;
+    }
+
+    /* ===========================
+       MOBILE NAV OVERLAY
+    =========================== */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(17,18,20,0.98);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: color 0.2s;
+    }
+
+    .mobile-menu a:hover {
+      color: var(--text-primary);
+    }
+
+    .mobile-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    /* ===========================
+       SCROLL ANIMATIONS
+    =========================== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-in-delay-1 { transition-delay: 0.1s; }
+    .fade-in-delay-2 { transition-delay: 0.2s; }
+    .fade-in-delay-3 { transition-delay: 0.3s; }
+
+    /* ===========================
+       RESPONSIVE
+    =========================== */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .about-grid,
+      .collab-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .bilingual-panel {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .bilingual-divider {
+        width: 100%;
+        height: 1px;
+      }
+
+      .episode-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .channel-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 4rem 1.25rem; }
+      nav { padding: 1rem 1.25rem; }
+      .hero-title { font-size: 2.5rem; }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .filming-note {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+      }
+
+      .episode-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form {
+        padding: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================
+       NAVIGATION
+  ========================= -->
+  <nav>
+    <div class="nav-logo">
+      <a href="#hero" class="site-logo" id="logo" aria-label="Origin Forge — Home">
+        <svg viewBox="0 0 108 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <clipPath id="nav-gold-clip">
+              <!-- Clip gold half to the left of the circle's centre x=74 -->
+              <rect x="0" y="0" width="74" height="96"/>
+            </clipPath>
+          </defs>
+          <!-- Terracotta triangle -->
+          <polygon points="4,92 72,92 38,4" fill="#C4622D"/>
+          <!-- Teal circle (upper-right, overlapping triangle) -->
+          <circle cx="74" cy="46" r="30" fill="#2A7D8E"/>
+          <!-- Gold crescent = left half of the circle, sits inside/over the triangle -->
+          <circle cx="74" cy="46" r="30" fill="#D4A847" clip-path="url(#nav-gold-clip)" opacity="0.95"/>
+        </svg>
+        <span class="site-logo-wordmark">Origin Forge</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#t2-channel">T² Channel · 土土会客厅</a></li>
+      <li><a href="#collaborate" class="nav-cta">Get Involved</a></li>
+    </ul>
+    <button class="hamburger" onclick="openMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" onclick="closeMenu()" aria-label="Close menu">&times;</button>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#t2-channel" onclick="closeMenu()">T² Channel · 土土会客厅</a>
+    <a href="#collaborate" onclick="closeMenu()">Get Involved</a>
+  </div>
+
+  <!-- ========================
+       HERO
+  ========================= -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-accent-line"></div>
+
+    <p class="hero-eyebrow">Adelaide, Australia &nbsp;·&nbsp; Media &amp; Content</p>
+
+    <h1 class="hero-title">
+      Stories That<br />
+      <span class="highlight">Bridge Worlds</span>
+    </h1>
+
+    <p class="hero-tagline">
+      Origin Forge is a media production company at the intersection of two worlds — creating conversations, content, and connections between Australia and China.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#about" class="btn-primary">Learn More</a>
+      <a href="#collaborate" class="btn-secondary">Become a Guest</a>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ========================
+       ABOUT
+  ========================= -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content fade-in">
+          <p class="section-label">Who We Are</p>
+          <h2 class="section-title">Where Cultures<br /><span class="teal">Meet &amp; Resonate</span></h2>
+          <div class="about-divider"></div>
+          <p class="section-body">
+            Origin Forge Pty Ltd is an Adelaide-based media production company with a singular purpose: to bridge the Australian and Chinese communities through the power of storytelling and authentic conversation.
+          </p>
+          <p class="section-body">
+            We believe the most compelling content emerges when cultures intersect. Our productions create spaces for thinkers, builders, and visionaries from both communities to share ideas, challenge assumptions, and inspire one another.
+          </p>
+          <p class="section-body">
+            From our home in South Australia — one of Australia's most dynamic and multicultural cities — we produce English and Chinese-language content that is intellectually rich, warmly human, and genuinely cross-cultural.
+          </p>
+          <div class="about-location">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            Based in Adelaide, South Australia
+          </div>
+        </div>
+
+        <div class="about-visual fade-in fade-in-delay-2">
+          <div class="about-card">
+            <div class="about-stat-grid">
+              <div class="about-stat">
+                <div class="number">2</div>
+                <div class="label">Languages</div>
+              </div>
+              <div class="about-stat">
+                <div class="number">1+</div>
+                <div class="label">Shows</div>
+              </div>
+              <div class="about-stat">
+                <div class="number">AU↔CN</div>
+                <div class="label">Communities</div>
+              </div>
+              <div class="about-stat">
+                <div class="number">ADL</div>
+                <div class="label">Home Base</div>
+              </div>
+            </div>
+            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.8; font-style: italic;">
+                "Great conversations don't just inform — they transform. We build the stage for those moments."
+              </p>
+              <p style="font-size: 0.8rem; color: var(--gold); font-weight: 600; margin-top: 0.75rem;">
+                — Origin Forge
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       T² CHANNEL
+  ========================= -->
+  <section id="t2-channel">
+    <div class="container">
+      <div class="channel-header fade-in">
+        <div>
+          <div class="channel-badge">
+            <span class="dot"></span>
+            Bilingual Talk Show &nbsp;·&nbsp; English &amp; 中文
+          </div>
+          <p class="section-label">Our Flagship Show</p>
+          <h2 class="section-title">T² Channel <span style="color: var(--text-secondary); font-weight: 400; font-size: 0.6em; vertical-align: middle;">·</span> <span class="gold" style="font-size: 0.75em;">土土会客厅</span></h2>
+          <p class="channel-subtitle" style="max-width: 480px;">
+            Intellectual conversations with innovators, entrepreneurs, and cultural figures — in English and Chinese.
+            The name says it all: T = 土 (tǔ), so T² = 土土 — one show, two languages, one world.
+          </p>
+        </div>
+        <a href="#" class="channel-link">
+          View All Episodes
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="episode-grid">
+
+        <!-- Episode 1 -->
+        <article class="episode-card fade-in">
+          <div class="episode-thumbnail">
+            <div class="play-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div class="ep-number">EP 01</div>
+          </div>
+          <div class="episode-body">
+            <p class="ep-guest">Guest Name · Founder &amp; Innovator</p>
+            <h3 class="ep-title">Building at the Frontier: What Australia Gets Right About Risk</h3>
+            <p class="ep-desc">A candid conversation about the entrepreneurial mindset, navigating two cultures, and why Adelaide is quietly becoming a hub for deep-tech ambition.</p>
+            <div class="ep-meta">
+              <span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                42 min
+              </span>
+              <span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                Lot Fourteen
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Episode 2 -->
+        <article class="episode-card fade-in fade-in-delay-1">
+          <div class="episode-thumbnail">
+            <div class="play-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div class="ep-number">EP 02</div>
+          </div>
+          <div class="episode-body">
+            <p class="ep-guest">Guest Name · Artist &amp; Cultural Leader</p>
+            <h3 class="ep-title">The Language of Belonging: Art, Identity &amp; the Diaspora Experience</h3>
+            <p class="ep-desc">An exploration of how creative expression becomes a bridge for communities navigating multiple cultural identities in contemporary Australia.</p>
+            <div class="ep-meta">
+              <span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                38 min
+              </span>
+              <span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                Stone &amp; Chalk
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Episode 3 -->
+        <article class="episode-card fade-in fade-in-delay-2">
+          <div class="episode-thumbnail">
+            <div class="play-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div class="ep-number">EP 03</div>
+          </div>
+          <div class="episode-body">
+            <p class="ep-guest">Guest Name · Researcher &amp; Thought Leader</p>
+            <h3 class="ep-title">Science Without Borders: Collaboration in an Age of Geopolitical Tension</h3>
+            <p class="ep-desc">A nuanced look at how researchers and institutions can continue to build meaningful partnerships across borders when the political winds shift.</p>
+            <div class="ep-meta">
+              <span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                55 min
+              </span>
+              <span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                Lot Fourteen
+              </span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="filming-note fade-in">
+        <div class="filming-note-icon">🎬</div>
+        <p>
+          T² is filmed at <strong>Stone &amp; Chalk</strong> and <strong>Lot Fourteen</strong> — Adelaide's premier innovation and startup precincts. Our production environment reflects our commitment to forward-thinking conversation in forward-thinking spaces.
+        </p>
+      </div>
+
+      <!-- Bilingual identity panel -->
+      <div class="bilingual-panel fade-in">
+        <div class="bilingual-left">
+          <div class="tutu-char-inline">土土</div>
+          <div>
+            <div class="tutu-name-zh">土土会客厅</div>
+            <div class="tutu-name-en">Tǔ Tǔ Huì Kè Tīng</div>
+          </div>
+        </div>
+        <div class="bilingual-divider"></div>
+        <div class="bilingual-right">
+          <p class="bilingual-explanation">
+            <strong>T² Channel</strong> and <strong>土土会客厅</strong> are one and the same show — two names, one bilingual identity.
+            The character 土 (tǔ) means "earth" and "groundedness." Two 土s make 土土 — and T². A show rooted in real places, real people, and the fertile ground between two cultures.
+          </p>
+          <a href="#" class="tutu-link-btn" style="margin-top: 1rem; display: inline-flex;">
+            访问中文版网站 &nbsp;→
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       COLLABORATE
+  ========================= -->
+  <section id="collaborate">
+    <div class="container">
+      <div class="collab-grid">
+
+        <div class="fade-in">
+          <p class="section-label">Work With Us</p>
+          <h2 class="section-title">Be Part of<br /><span class="teal">the Conversation</span></h2>
+          <div class="about-divider"></div>
+          <p class="collab-pitch">
+            Are you an entrepreneur, researcher, creative, or cultural figure with a story worth telling? We're always looking for guests who bring new perspectives to the table — people who are building, thinking, or creating at the intersection of two worlds.
+          </p>
+          <p class="collab-pitch" style="margin-bottom: 1.75rem;">
+            We're also open to creative partnerships, sponsorship conversations, and production collaborations. If you believe in the power of genuine dialogue across cultures, let's talk.
+          </p>
+
+          <ul class="collab-perks">
+            <li>
+              <div class="perk-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              Professionally produced in Adelaide's top innovation precincts
+            </li>
+            <li>
+              <div class="perk-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              Bilingual reach across Australian and Chinese-speaking audiences
+            </li>
+            <li>
+              <div class="perk-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              Long-form, thoughtful format — no soundbites, just real dialogue
+            </li>
+            <li>
+              <div class="perk-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              Collaborative and supportive production team throughout
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form fade-in fade-in-delay-2">
+          <h3 class="form-title">Get in Touch</h3>
+          <!-- Replace ACTION with your Formspree endpoint, e.g. https://formspree.io/f/YOUR_ID -->
+          <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="interest">I'm interested in…</label>
+              <select id="interest" name="interest">
+                <option value="guest">Being a guest on T² Channel · 土土会客厅</option>
+                <option value="partnership">Creative partnership / collaboration</option>
+                <option value="sponsorship">Sponsorship opportunity</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell Us More</label>
+              <textarea id="message" name="message" placeholder="Share a bit about yourself and what you'd like to discuss…" required></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Message →</button>
+            <p class="form-note">We aim to respond within 2–3 business days.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       FOOTER
+  ========================= -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-area">
+          <a href="#hero" class="site-logo footer-logo" aria-label="Origin Forge — Home">
+            <svg viewBox="0 0 108 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <clipPath id="footer-gold-clip">
+                  <rect x="0" y="0" width="74" height="96"/>
+                </clipPath>
+              </defs>
+              <polygon points="4,92 72,92 38,4" fill="#C4622D"/>
+              <circle cx="74" cy="46" r="30" fill="#2A7D8E"/>
+              <circle cx="74" cy="46" r="30" fill="#D4A847" clip-path="url(#footer-gold-clip)" opacity="0.95"/>
+            </svg>
+            <span class="site-logo-wordmark">Origin Forge</span>
+          </a>
+        </div>
+        <p class="footer-tagline">
+          An Adelaide-based media production company bridging Australian and Chinese communities through storytelling and conversation.
+        </p>
+        <div class="social-row">
+          <!-- YouTube -->
+          <a href="#" class="social-icon" aria-label="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon fill="var(--dark)" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          </a>
+          <!-- WeChat -->
+          <a href="#" class="social-icon" aria-label="WeChat">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8.5 4C4.36 4 1 6.92 1 10.5c0 2.01 1.05 3.8 2.7 4.96L3 18l3.16-1.58C7.03 16.76 7.76 17 8.5 17c.28 0 .56-.02.84-.05A5.48 5.48 0 0 1 9 14.5C9 11.19 12.13 8.5 16 8.5h.5C15.64 5.94 12.35 4 8.5 4zm-2 4a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm4 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM16 10c-3.31 0-6 2.24-6 5s2.69 5 6 5c.72 0 1.41-.12 2.05-.33L21 21l-.71-2.83A4.92 4.92 0 0 0 22 15c0-2.76-2.69-5-6-5zm-1.5 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Navigate</h4>
+        <ul class="footer-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#t2-channel">T² Channel · 土土会客厅</a></li>
+          <li><a href="#collaborate">Collaborate</a></li>
+          <li><a href="#">中文版 →</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Contact</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:hello@originforge.com.au">hello@originforge.com.au</a></li>
+          <li><a href="#">Lot Fourteen, Adelaide SA</a></li>
+          <li style="margin-top: 1rem;"><a href="#collaborate" style="color: var(--teal); font-weight: 500;">Become a Guest →</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <strong>Origin Forge Pty Ltd</strong> &nbsp;·&nbsp; ACN 698 002 185<br />
+        Adelaide SA, Australia &nbsp;·&nbsp; &copy; 2024–2025 All rights reserved.
+      </div>
+      <div class="footer-legal" style="text-align: right;">
+        Crafted in Adelaide<br />
+        <span style="color: var(--terracotta);">&#9675;</span> Stories That Bridge Worlds
+      </div>
+    </div>
+
+    <div class="footer-accent-bar"></div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <span class="toast-icon">✓</span>
+    <span>Message sent! We'll be in touch soon.</span>
+  </div>
+
+  <!-- ========================
+       JAVASCRIPT
+  ========================= -->
+  <script>
+    // Mobile menu
+    function openMenu() {
+      document.getElementById('mobileMenu').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      document.getElementById('mobileMenu').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Nav background on scroll
+    const navEl = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        navEl.style.background = 'rgba(17, 18, 20, 0.97)';
+      } else {
+        navEl.style.background = 'rgba(17, 18, 20, 0.85)';
+      }
+    });
+
+    // Form submission
+    function handleSubmit(e) {
+      const action = e.target.action;
+      // If Formspree not configured, fall back to mailto
+      if (action.includes('YOUR_FORM_ID')) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const interest = document.getElementById('interest').value;
+        const message = document.getElementById('message').value;
+        const mailtoLink = `mailto:hello@originforge.com.au?subject=Enquiry: ${encodeURIComponent(interest)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+        window.location.href = mailtoLink;
+        showToast();
+        return;
+      }
+      // Formspree AJAX submission
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      fetch(action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(res => {
+        if (res.ok) {
+          e.target.reset();
+          showToast();
+        }
+      }).catch(() => {
+        // Fallback: just show toast anyway
+        showToast();
+      });
+    }
+
+    function showToast() {
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 4000);
+    }
+  </script>
+
+</body>
+</html>
