@@ -692,98 +692,6 @@
       color: var(--teal);
     }
 
-    /* ===========================
-       BILINGUAL IDENTITY PANEL
-    =========================== */
-    .bilingual-panel {
-      margin-top: 2.5rem;
-      background: var(--dark-mid);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 2.5rem;
-      display: grid;
-      grid-template-columns: auto 1px 1fr;
-      gap: 2.5rem;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .bilingual-panel::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--gold), var(--terracotta), var(--teal));
-    }
-
-    .bilingual-left {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      flex-shrink: 0;
-    }
-
-    .tutu-char-inline {
-      font-size: 3.5rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, var(--gold), var(--terracotta));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1;
-    }
-
-    .tutu-name-zh {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text-secondary);
-      letter-spacing: 0.08em;
-      margin-bottom: 0.35rem;
-    }
-
-    .tutu-name-en {
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.3);
-      letter-spacing: 0.06em;
-    }
-
-    .bilingual-divider {
-      width: 1px;
-      height: 80px;
-      background: var(--border);
-      flex-shrink: 0;
-    }
-
-    .bilingual-explanation {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.8;
-    }
-
-    .bilingual-explanation strong {
-      color: var(--text-primary);
-    }
-
-    .tutu-link-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: linear-gradient(135deg, var(--gold), var(--terracotta));
-      color: white;
-      padding: 0.625rem 1.25rem;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      transition: all 0.2s ease;
-      letter-spacing: 0.02em;
-    }
-
-    .tutu-link-btn:hover {
-      opacity: 0.9;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(212, 168, 71, 0.3);
-    }
 
     /* ===========================
        COLLABORATE
@@ -1169,15 +1077,6 @@
         gap: 3rem;
       }
 
-      .bilingual-panel {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .bilingual-divider {
-        width: 100%;
-        height: 1px;
-      }
 
       .episode-grid {
         grid-template-columns: 1fr;
@@ -1247,7 +1146,7 @@
     </div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#t2-channel">T² Channel · 土土会客厅</a></li>
+      <li><a href="#t2-channel">T² Channel</a></li>
       <li><a href="#collaborate" class="nav-cta">Get Involved</a></li>
     </ul>
     <button class="hamburger" onclick="openMenu()" aria-label="Open menu">
@@ -1259,7 +1158,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <button class="mobile-close" onclick="closeMenu()" aria-label="Close menu">&times;</button>
     <a href="#about" onclick="closeMenu()">About</a>
-    <a href="#t2-channel" onclick="closeMenu()">T² Channel · 土土会客厅</a>
+    <a href="#t2-channel" onclick="closeMenu()">T² Channel</a>
     <a href="#collaborate" onclick="closeMenu()">Get Involved</a>
   </div>
 
@@ -1361,13 +1260,12 @@
         <div>
           <div class="channel-badge">
             <span class="dot"></span>
-            Bilingual Talk Show &nbsp;·&nbsp; English &amp; 中文
+            Now Filming · Adelaide
           </div>
           <p class="section-label">Our Flagship Show</p>
-          <h2 class="section-title">T² Channel <span style="color: var(--text-secondary); font-weight: 400; font-size: 0.6em; vertical-align: middle;">·</span> <span class="gold" style="font-size: 0.75em;">土土会客厅</span></h2>
-          <p class="channel-subtitle" style="max-width: 480px;">
-            Intellectual conversations with innovators, entrepreneurs, and cultural figures — in English and Chinese.
-            The name says it all: T = 土 (tǔ), so T² = 土土 — one show, two languages, one world.
+          <h2 class="section-title">T² <span class="teal">Channel</span></h2>
+          <p class="channel-subtitle">
+            Intellectual conversations with innovators, entrepreneurs, and cultural figures shaping our world.
           </p>
         </div>
         <a href="#" class="channel-link">
@@ -1462,26 +1360,6 @@
         </p>
       </div>
 
-      <!-- Bilingual identity panel -->
-      <div class="bilingual-panel fade-in">
-        <div class="bilingual-left">
-          <div class="tutu-char-inline">土土</div>
-          <div>
-            <div class="tutu-name-zh">土土会客厅</div>
-            <div class="tutu-name-en">Tǔ Tǔ Huì Kè Tīng</div>
-          </div>
-        </div>
-        <div class="bilingual-divider"></div>
-        <div class="bilingual-right">
-          <p class="bilingual-explanation">
-            <strong>T² Channel</strong> and <strong>土土会客厅</strong> are one and the same show — two names, one bilingual identity.
-            The character 土 (tǔ) means "earth" and "groundedness." Two 土s make 土土 — and T². A show rooted in real places, real people, and the fertile ground between two cultures.
-          </p>
-          <a href="#" class="tutu-link-btn" style="margin-top: 1rem; display: inline-flex;">
-            访问中文版网站 &nbsp;→
-          </a>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -1547,7 +1425,7 @@
             <div class="form-group">
               <label for="interest">I'm interested in…</label>
               <select id="interest" name="interest">
-                <option value="guest">Being a guest on T² Channel · 土土会客厅</option>
+                <option value="guest">Being a guest on T² Channel</option>
                 <option value="partnership">Creative partnership / collaboration</option>
                 <option value="sponsorship">Sponsorship opportunity</option>
                 <option value="other">Something else</option>
@@ -1614,7 +1492,7 @@
         <h4 class="footer-col-title">Navigate</h4>
         <ul class="footer-links">
           <li><a href="#about">About Us</a></li>
-          <li><a href="#t2-channel">T² Channel · 土土会客厅</a></li>
+          <li><a href="#t2-channel">T² Channel</a></li>
           <li><a href="#collaborate">Collaborate</a></li>
           <li><a href="#">中文版 →</a></li>
         </ul>
