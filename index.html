@@ -570,61 +570,6 @@
       box-shadow: 0 16px 40px rgba(0,0,0,0.4);
     }
 
-    .episode-thumbnail {
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: linear-gradient(135deg, #1e2530, #252b35);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .episode-thumbnail::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(42,157,143,0.08), transparent);
-    }
-
-    .play-icon {
-      width: 48px;
-      height: 48px;
-      background: rgba(255,255,255,0.1);
-      border: 2px solid rgba(255,255,255,0.2);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      z-index: 1;
-      transition: all 0.2s ease;
-    }
-
-    .episode-card:hover .play-icon {
-      background: rgba(42,157,143,0.3);
-      border-color: var(--teal);
-    }
-
-    .play-icon svg {
-      margin-left: 3px;
-    }
-
-    .ep-number {
-      position: absolute;
-      top: 0.75rem;
-      right: 0.75rem;
-      background: var(--teal);
-      color: white;
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-      letter-spacing: 0.05em;
-      z-index: 1;
-    }
-
     .episode-body {
       padding: 1.5rem;
     }
@@ -1225,8 +1170,8 @@
                 <div class="label">Languages</div>
               </div>
               <div class="about-stat">
-                <div class="number">1+</div>
-                <div class="label">Shows</div>
+                <div class="number">4+</div>
+                <div class="label">Episodes</div>
               </div>
               <div class="about-stat">
                 <div class="number">AU↔CN</div>
@@ -1278,24 +1223,18 @@
 
         <!-- Episode 1 -->
         <article class="episode-card fade-in">
-          <div class="episode-thumbnail">
-            <div class="play-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            </div>
-            <div class="ep-number">EP 01</div>
-          </div>
           <div class="episode-body">
-            <p class="ep-guest">Guest Name · Founder &amp; Innovator</p>
-            <h3 class="ep-title">Building at the Frontier: What Australia Gets Right About Risk</h3>
-            <p class="ep-desc">A candid conversation about the entrepreneurial mindset, navigating two cultures, and why Adelaide is quietly becoming a hub for deep-tech ambition.</p>
+            <p class="ep-guest">EP 01 &nbsp;·&nbsp; Charlie Cai · Founder, Constructoo</p>
+            <h3 class="ep-title">Levelling the Playing Field: How AI Is Fixing Construction's Hidden Information Problem</h3>
+            <p class="ep-desc">When homeowners deal with builders and contractors, they're often at a costly disadvantage. Charlie Cai is changing that with Constructoo — an AI platform giving everyday people near-expert decision-making power in one of Australia's most opaque industries.</p>
             <div class="ep-meta">
               <span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                42 min
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                ConTech · AI · Entrepreneurship
               </span>
               <span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
-                Lot Fourteen
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Stone &amp; Chalk
               </span>
             </div>
           </div>
@@ -1303,49 +1242,33 @@
 
         <!-- Episode 2 -->
         <article class="episode-card fade-in fade-in-delay-1">
-          <div class="episode-thumbnail">
-            <div class="play-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            </div>
-            <div class="ep-number">EP 02</div>
-          </div>
           <div class="episode-body">
-            <p class="ep-guest">Guest Name · Artist &amp; Cultural Leader</p>
-            <h3 class="ep-title">The Language of Belonging: Art, Identity &amp; the Diaspora Experience</h3>
-            <p class="ep-desc">An exploration of how creative expression becomes a bridge for communities navigating multiple cultural identities in contemporary Australia.</p>
+            <p class="ep-guest">EP 02 &nbsp;·&nbsp; James Zhang · Founder, Intallaga</p>
+            <h3 class="ep-title">Beyond the Algorithm: Building an SAT Tutor That Keeps the Human at the Centre</h3>
+            <p class="ep-desc">James Zhang spent 9 years in the classroom before building Amma AI — a multilingual SAT prep platform that pairs AI capability with genuine human connection. His conviction: technology should amplify the relationship between student and teacher, not replace it.</p>
             <div class="ep-meta">
               <span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                38 min
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                EdTech · SAT · Multilingual
               </span>
               <span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
-                Stone &amp; Chalk
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Adelaide
               </span>
             </div>
           </div>
         </article>
 
-        <!-- Episode 3 -->
-        <article class="episode-card fade-in fade-in-delay-2">
-          <div class="episode-thumbnail">
-            <div class="play-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            </div>
-            <div class="ep-number">EP 03</div>
-          </div>
-          <div class="episode-body">
-            <p class="ep-guest">Guest Name · Researcher &amp; Thought Leader</p>
-            <h3 class="ep-title">Science Without Borders: Collaboration in an Age of Geopolitical Tension</h3>
-            <p class="ep-desc">A nuanced look at how researchers and institutions can continue to build meaningful partnerships across borders when the political winds shift.</p>
+        <!-- Episode 3 — Coming Soon -->
+        <article class="episode-card fade-in fade-in-delay-2" style="opacity: 0.65;">
+          <div class="episode-body" style="display: flex; flex-direction: column; justify-content: center; min-height: 160px;">
+            <p class="ep-guest" style="color: var(--text-secondary);">EP 03 &amp; beyond</p>
+            <h3 class="ep-title" style="color: var(--text-secondary);">More conversations coming soon</h3>
+            <p class="ep-desc">We're filming new episodes across Adelaide and beyond. If you have a story worth telling, we'd love to hear from you.</p>
             <div class="ep-meta">
-              <span>
+              <span style="color: var(--teal);">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                55 min
-              </span>
-              <span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
-                Lot Fourteen
+                Now Filming
               </span>
             </div>
           </div>
@@ -1413,7 +1336,7 @@
         <div class="contact-form fade-in fade-in-delay-2">
           <h3 class="form-title">Get in Touch</h3>
           <!-- Replace ACTION with your Formspree endpoint, e.g. https://formspree.io/f/YOUR_ID -->
-          <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="handleSubmit(event)">
+          <form id="contactForm" action="https://formspree.io/f/xkoayape" method="POST" onsubmit="handleSubmit(event)">
             <div class="form-group">
               <label for="name">Your Name</label>
               <input type="text" id="name" name="name" placeholder="Jane Smith" required />
@@ -1494,14 +1417,13 @@
           <li><a href="#about">About Us</a></li>
           <li><a href="#t2-channel">T² Channel</a></li>
           <li><a href="#collaborate">Collaborate</a></li>
-          <li><a href="#">中文版 →</a></li>
         </ul>
       </div>
 
       <div>
         <h4 class="footer-col-title">Contact</h4>
         <ul class="footer-links">
-          <li><a href="mailto:hello@originforge.com.au">hello@originforge.com.au</a></li>
+          <li><a href="mailto:originforget2@gmail.com">originforget2@gmail.com</a></li>
           <li><a href="#">Lot Fourteen, Adelaide SA</a></li>
           <li style="margin-top: 1rem;"><a href="#collaborate" style="color: var(--teal); font-weight: 500;">Become a Guest →</a></li>
         </ul>
